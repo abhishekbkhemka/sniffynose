@@ -1,0 +1,429 @@
+// stylelint-disable declaration-no-important, at-rule-no-vendor-prefix
+
+//
+// Responsive: Utility classes
+// --------------------------------------------------
+
+
+// IE10 in Windows (Phone) 8
+//
+// Support for responsive views via media queries is kind of borked in IE10, for
+// Surface/desktop in split view and for Windows Phone 8. This particular fix
+// must be accompanied by a snippet of JavaScript to sniff the user agent and
+// apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+// our Getting Started page for more information on this bug.
+//
+// For more information, see the following:
+//
+// Issue: https://github.com/twbs/bootstrap/issues/10497
+// Docs: https://getbootstrap.com/docs/3.4/getting-started/#support-ie10-width
+// Source: https://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+// Source: https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@desktop:   ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@mobile:    ~"only screen and (min-width: 300px) and (max-width: 719px)";
+
+// Visibility utilities
+// Note: Deprecated .visible-xs, .visible-sm, .visible-md, and .visible-lg as of v3.2.0
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  .responsive-invisibility();
+}
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+.visible-xs {
+  @media (max-width: @screen-xs-max) {
+    .responsive-visibility();
+  }
+}
+.visible-xs-block {
+  @media (max-width: @screen-xs-max) {
+    display: block !important;
+  }
+}
+.visible-xs-inline {
+  @media (max-width: @screen-xs-max) {
+    display: inline !important;
+  }
+}
+.visible-xs-inline-block {
+  @media (max-width: @screen-xs-max) {
+    display: inline-block !important;
+  }
+}
+
+.visible-sm {
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .responsive-visibility();
+  }
+}
+.visible-sm-block {
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    display: block !important;
+  }
+}
+.visible-sm-inline {
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    display: inline !important;
+  }
+}
+.visible-sm-inline-block {
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    display: inline-block !important;
+  }
+}
+
+.visible-md {
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .responsive-visibility();
+  }
+}
+.visible-md-block {
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    display: block !important;
+  }
+}
+.visible-md-inline {
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    display: inline !important;
+  }
+}
+.visible-md-inline-block {
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    display: inline-block !important;
+  }
+}
+
+.visible-lg {
+  @media (min-width: @screen-lg-min) {
+    .responsive-visibility();
+  }
+}
+.visible-lg-block {
+  @media (min-width: @screen-lg-min) {
+    display: block !important;
+  }
+}
+.visible-lg-inline {
+  @media (min-width: @screen-lg-min) {
+    display: inline !important;
+  }
+}
+.visible-lg-inline-block {
+  @media (min-width: @screen-lg-min) {
+    display: inline-block !important;
+  }
+}
+
+.hidden-xs {
+  @media (max-width: @screen-xs-max) {
+    .responsive-invisibility();
+  }
+}
+.hidden-sm {
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .responsive-invisibility();
+  }
+}
+.hidden-md {
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .responsive-invisibility();
+  }
+}
+.hidden-lg {
+  @media (min-width: @screen-lg-min) {
+    .responsive-invisibility();
+  }
+}
+
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+// Note: Deprecated .visible-print as of v3.2.0
+.visible-print {
+  .responsive-invisibility();
+
+  @media print {
+    .responsive-visibility();
+  }
+}
+.visible-print-block {
+  display: none !important;
+
+  @media print {
+    display: block !important;
+  }
+}
+.visible-print-inline {
+  display: none !important;
+
+  @media print {
+    display: inline !important;
+  }
+}
+.visible-print-inline-block {
+  display: none !important;
+
+  @media print {
+    display: inline-block !important;
+  }
+}
+
+.hidden-print {
+  @media print {
+    .responsive-invisibility();
+  }
+}
+
+.navbar .topbar .container ul.contact-email-details li a {
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+  color: #fff!important;
+  font-size: 12px !important;
+  padding-right: 5px;
+}
+@media @mobile{
+  .nav{
+    li{
+      display: inline-block;
+    }
+  }
+  .navbar-brand{
+    position: relative;
+    height: 50px !important;
+    img{
+      width: 45px;
+    }
+  }
+
+
+  .collapse.in{
+    background: #000;
+    ul{
+      li{
+        display: block !important;
+        a{
+          display: block !important;
+          color: #fff !important;
+        }
+      }
+    }
+  }
+
+  .frontSection{
+    .row {
+      h1{
+        font-size: @font-size * 2 + @font-size/4 !important;
+      }
+
+      p{
+        font-size: @font-size !important;
+        padding-bottom: @space/2 !important;
+      }
+      button{
+        width: @full-size !important;
+      }
+    }
+  } 
+  .row-flex-reverse-mobile{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .column-flex-reverse-mobile{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .hidden-md-none{
+    display: block !important;
+  }
+
+  .heading{
+    padding-bottom: @line-height-computed + @line-height-computed/8;
+    h3{
+      font-size: @line-height-computed + (@line-height-computed/2) !important;
+      }
+  }
+
+  .radios{
+    flex-direction: row !important;
+  }
+  .services{
+    background: #ebeaec;
+    .container{
+      padding-bottom: @space * 2;
+      .col-sm-7 {
+        padding-right: 0px;
+        .service-details{
+          padding-top: @space * 2;
+          ul{
+            li{
+              width: @full-size;
+              .size(auto, 45px);
+              margin-bottom: @space - @space/4;
+              img{
+                height: 45px;
+              }
+              span{
+                font-size: @space;
+                padding-left: @space * 3 + @space/2;
+              }
+            }
+          }
+        }
+      }
+      .col-sm-5{
+        margin-top: @line-height-computed;
+        padding-left: 0px !important;
+        img{
+          .size(274px; 600px) !important;
+          position: absolute;
+          bottom: 0;
+          margin-right: -53px;
+          max-width: fit-content;
+        }
+      }
+    }
+  }
+
+  .packages{
+    padding: @space * 2  @space !important;
+    .plans{
+      .plan-details.text-center{
+        margin-bottom: @space;
+        text-align: left !important;
+        h5{
+          margin-bottom: @space/4;
+        }
+        h2{
+          margin-top: @space/8;
+          font-size: @space * 2 - (@space/4);
+          padding-bottom: @space/4;
+        }
+        ul{
+          li{
+            padding-bottom: @space + @space/8;
+            img{
+              width: 20px;
+            }
+            span{
+              font-size: @font-size - @font-size/8;
+            }
+          }
+        }
+      }
+    }
+   
+    .package-details{
+      margin-bottom: @space/2;
+      img {
+        margin-bottom: @space/4 !important;
+        .size(auto, 51px) !important;
+         }
+       h3{
+         margin-top:@space/4 !important;
+         margin-bottom:@space/2 !important;
+         font-size: @font-size !important;
+       }  
+       h2{
+         font-size: @font-size + @font-size/2 !important;
+       }
+    }
+  }
+  .contact-email-details{
+    padding-left: 0px !important;
+    margin:@space/4 + @space/8 0;
+    li{
+      &:last-child{
+        position: absolute;
+        right: @space/2;
+      }
+      a{
+        img{
+          width: 12px;
+        }
+      }
+    }
+  }
+  .hidden-xs-mobile{
+    display: none !important;
+  }
+  .dog-image-responsive{
+    width: 75%;
+  }
+  .bookwithus{
+    padding: @space * 2 0 !important;
+    display: block !important;
+  }
+
+  footer{
+    .container{
+      .col-sm-6{
+        .footer-left-details{
+          img{
+             margin-bottom: 0 !important;
+          }
+          p{
+            font-size: @font-size - @font-size/8 !important;
+            margin-top: @space;
+          }
+        }
+       
+      }
+
+      .col-sm-6{
+        .contact-details {
+          h3 {
+           margin-top: @space * 2 + @space/2;
+          }
+         }
+       }
+    }
+    p{
+      margin-top: @space * 2;
+    }
+  }
+
+  .works{
+     .container{
+        .col-sm-4{
+          padding-left: @space * 2 + @space/2; 
+          padding-right: @space * 2 + @space/2;
+          img{
+            height: 95px !important;
+          }
+           h3{
+            margin-top: @space !important;
+            margin-bottom: @space/2;
+            font-size: @font-size + @font-size/4 !important;
+           }
+           p{
+             font-size: @font-size !important;
+           }
+          }
+     }
+    }
+}

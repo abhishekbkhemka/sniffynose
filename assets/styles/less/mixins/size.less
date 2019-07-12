@@ -1,0 +1,16 @@
+// Sizing shortcuts
+
+.size(@width; @height) {
+  width: @width;
+  height: @height;
+}
+
+.square(@size) {
+  .size(@size; @size);
+}
+
+.flex(@dflex, @contentalignment, @itemsalignment ){
+  display: @dflex;
+  justify-content: @contentalignment;
+  align-items: @itemsalignment;
+}
