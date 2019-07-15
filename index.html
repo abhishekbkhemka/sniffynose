@@ -13,8 +13,7 @@
 <body>
   <div class="">
         <div class="pageWrap">
-         
-        <nav class="navbar navbar-default navbar-static-top">
+            <nav class="navbar navbar-default navbar-static-top">
                 <div class="topbar">
                     <div class="container">
                         <ul class="nav navbar-nav contact-email-details">
@@ -37,13 +36,19 @@
                 <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="Logo" ></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-            
+                <span class="hidden-md-none" id="cancel"><a href="#"><img src="/assets/images/cancel.svg" alt="Close"/></a></span>
+                <h3 class="hidden-md-none">Menu</h3>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#service-section">Services</a></li>
                     <li><a href="#work-section">How it Works</a></li>
                     <li><a href="#packages-section">Packages</a></li>
                     <li><a href="#bookwithus-section">Book With Us</a></li>
                 </ul>
+                <ul class="social-icons nav navbar-nav hidden-md-none nav-spacing">
+                    <li><a href="#"><img src="assets/images/fb.svg"></a></li>
+                    <li><a href="#"><img src="assets/images/twit.svg"></a></li>
+                    <li><a href="#"><img src="assets/images/link.svg"></a></li>
+            </ul>
             </div><!--/.nav-collapse -->
             </div>
         </nav>
@@ -475,6 +480,10 @@ $(function () {
           $("#menu-btn").click(function(){
             $("#navbar").toggleClass("in");
           });
+          $('#cancel').click(function(){
+            $("#navbar").removeClass("in");
+          })
+
 
             $( "#bookForm" ).submit(function( event ) {
 
