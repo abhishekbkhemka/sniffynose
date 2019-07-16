@@ -526,7 +526,7 @@ $(function () {
         if(preferTime){
             params.prefer_time = preferTime
         }
-        $.post("https://api.meddna.com:8000/sniffynose/book-groomer/", params)
+        $.post("https://api.meddna.com/sniffynose/book-groomer/", params)
             .done(function (res,code) {
                 console.log(code)
                 cb({status:'success',response:res})
