@@ -64,6 +64,7 @@
 </head>
 
 <body>
+        <div id="loading"></div>
   <div class="">
         <div class="pageWrap">
             <nav class="navbar navbar-default navbar-static-top">
@@ -75,9 +76,9 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right nav-spacing hidden-xs-mobile">
-                                <li><a href="https://www.facebook.com/sniffynoseworld/" target="_blank"><img src="assets/images/fb.svg"></a></li>
-                                <li><a href="https://www.instagram.com/sniffynoseworld/" target="_blank"><img src="assets/images/instagram.png"></a></li>
-                                <li><a href="https://www.linkedin.com/company/sniffy-nose/" target="_blank"><img src="assets/images/link.svg"></a></li>
+                                <li><a href="https://www.facebook.com/sniffynoseworld/" target="_blank"><img src="assets/images/fb.svg" alt="facebook Icon"></a></li>
+                                <li><a href="https://www.instagram.com/sniffynoseworld/" target="_blank"><img src="assets/images/instagram.png" alt="Instagram Icon"></a></li>
+                                <li><a href="https://www.linkedin.com/company/sniffy-nose/" target="_blank"><img src="assets/images/link.svg" alt="Link Icon"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -591,6 +592,13 @@ $(function () {
                 }
 
             });
+
+
+            // loading bar js
         });
+
+        $(window).load(function(){
+             $('#loading').fadeOut();
+            });
         </script>
 </html>
