@@ -106,15 +106,12 @@
   .opacity(@carousel-control-opacity);
   // We can't have this transition here because WebKit cancels the carousel
   // animation if you trip this while in the middle of another animation.
-
   // Set gradients for backgrounds
   &.left {
-    #gradient > .horizontal(@start-color: rgba(0, 0, 0, .5); @end-color: rgba(0, 0, 0, .0001));
   }
   &.right {
     right: 0;
     left: auto;
-    #gradient > .horizontal(@start-color: rgba(0, 0, 0, .0001); @end-color: rgba(0, 0, 0, .5));
   }
 
   // Hover/focus state
@@ -270,4 +267,25 @@
   .carousel-indicators {
     bottom: 20px;
   }
+}
+
+
+.carousel-inner{
+  .item{
+    .frontSection{
+      .container{
+        .column-flex-reverse-mobile{
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.arrow-chevron-right, .arrow-chevron-left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
